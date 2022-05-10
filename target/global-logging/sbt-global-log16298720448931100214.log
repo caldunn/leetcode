@@ -1,0 +1,53 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(~test, Some(c2860d85-25dc-4775-9c01-8bc382902067), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(__runWatch console0, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtStashOnFailure, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(__preWatch console0, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(test, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / test[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mBasicArithmetic:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mBasic Arithmetic[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should allow 1 + 1 to equal 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should allow for multiplication[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should throw an exception when divided by 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mArraysAndHashingT:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m217 - Contains Duplicates[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Report false on the empty array[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Be False on the array containing 0 - 100 inclusive[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Be True for an array containing a single duplicate[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Be true for multiple duplicates[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be true for seperated duplications[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m242 - Valid Anagram[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should true for toyot[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should false for car[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m1 - Two Sum[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should pairs togethor[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should pairs apart[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should default (0,0) if there is no match[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m49 - Group Anagrams[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should sort like anagrams[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should respect an empty array[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mT347 - Top K Elements[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should determine top 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should support 1 element[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m238 - Prodct of Array Except Self[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should work with division[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should work with 0s[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m659 - Encode and Decode Strings[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should encode -> decode a string with only alpha-numerics *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  Expected List("lint", "code", "love", "you"), but got List() (ArraysAndHashingT.scala:91)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should encode -> decode a string that contains more than 10 letters in a single word *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  Expected List("lint", "codingwiththebois", "love", "you"), but got List() (ArraysAndHashingT.scala:99)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 787 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 21[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 2, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 19, failed 2, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 2 TESTS FAILED ***[0m[0m
+[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	ArraysAndHashingT[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 6 s, completed 30 Apr 2022, 9:06:24 pm[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(resumeFromFailure, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtPopOnFailure, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(__postWatch console0, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(__waitWatch console0, None, Some(CommandSource(console0)))[0m
