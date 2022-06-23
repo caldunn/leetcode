@@ -1,5 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E018] Syntax Error: /home/caleb/dev/jvm/scala/leetcode/src/test/scala/ArraysAndHashingT.scala:88:17 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m88 |[0m    [33mval[0m [36meResult[0m = [0m
-[0m[[0m[31merror[0m] [0m[0m   |                 [31m^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                 expression expected but [31m'}'[0m found[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
