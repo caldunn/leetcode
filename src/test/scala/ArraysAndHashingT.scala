@@ -102,10 +102,53 @@ class ArraysAndHashingT extends BaseFlatSpec {
     assertResult(input)(rResult)
   }
 
-  "36 - Partially valid sudoku validation" should "encode -> decode a string with only alpha-numerics" in {
-    val input   = Seq("lint", "code", "love", "you") // "4!lint4!code4!love3!you"
-    val rResult = EncodeAndDecodeStrings.decode(EncodeAndDecodeStrings.encode(input))
+  "36 - Partially valid sudoku validation" should "return true for a valid sudoku" in {
+    val input = Array(
+      Array("5", "3", ".", ".", "7", ".", ".", ".", "."),
+      Array("6", ".", ".", "1", "9", "5", ".", ".", "."),
+      Array(".", "9", "8", ".", ".", ".", ".", "6", "."),
+      Array("8", ".", ".", ".", "6", ".", ".", ".", "3"),
+      Array("4", ".", ".", "8", ".", "3", ".", ".", "1"),
+      Array("7", ".", ".", ".", "2", ".", ".", ".", "6"),
+      Array(".", "6", ".", ".", ".", ".", "2", "8", "."),
+      Array(".", ".", ".", "4", "1", "9", ".", ".", "5"),
+      Array(".", ".", ".", ".", "8", ".", ".", "7", "9")
+    )
+    val rResult = SudokuValidator.validateSudoku(input)
 
-    assertResult(input)(rResult)
+    assertResult(true)(rResult)
+  }
+  it should "detect an invalid table" in {
+    val input = Array(
+      Array("8", "3", ".", ".", "7", ".", ".", ".", "."),
+      Array("6", ".", ".", "1", "9", "5", ".", ".", "."),
+      Array(".", "9", "8", ".", ".", ".", ".", "6", "."),
+      Array("8", ".", ".", ".", "6", ".", ".", ".", "3"),
+      Array("4", ".", ".", "8", ".", "3", ".", ".", "1"),
+      Array("7", ".", ".", ".", "2", ".", ".", ".", "6"),
+      Array(".", "6", ".", ".", ".", ".", "2", "8", "."),
+      Array(".", ".", ".", "4", "1", "9", ".", ".", "5"),
+      Array(".", ".", ".", ".", "8", ".", ".", "7", "9")
+    )
+    val rResult = SudokuValidator.validateSudoku(input)
+
+    assertResult(false)(rResult)
+  }
+
+  it should "Empty should be valid" in {
+    val input = Array(
+      Array(".", ".", ".", ".", ".", ".", ".", ".", "."),
+      Array(".", ".", ".", ".", ".", ".", ".", ".", "."),
+      Array(".", ".", ".", ".", ".", ".", ".", ".", "."),
+      Array(".", ".", ".", ".", ".", ".", ".", ".", "."),
+      Array(".", ".", ".", ".", ".", ".", ".", ".", "."),
+      Array(".", ".", ".", ".", ".", ".", ".", ".", "."),
+      Array(".", ".", ".", ".", ".", ".", ".", ".", "."),
+      Array(".", ".", ".", ".", ".", ".", ".", ".", "."),
+      Array(".", ".", ".", ".", ".", ".", ".", ".", ".")
+    )
+    val rResult = SudokuValidator.validateSudoku(input)
+
+    assertResult(true)(rResult)
   }
 }
