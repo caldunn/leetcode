@@ -10,32 +10,32 @@ object EncodeAndDecodeStrings {
     }
 
   def decode(in: String): Seq[String] =
-    enum State:
-      case DELIMITER, WORD
 
-    println("-" * 25)
-    println(s"\n${in.drop(4)} : ${in.slice(0, 4)}\n")
-    println("-" * 25)
-    /**/
+    /**
+     * Grab the length of the first word. Makes recursive step easier to read.
+     * @return
+     *   Length of first encoded word.
+     */
+    def extractLength(word: String) =
+      val l = word.takeWhile(_ != '!')
+      if l.nonEmpty then (l.toInt, l.length) else (0, 0)
 
-    if in.length <= 0 then return Seq()
+    @tailrec
+    def recurse(wordLength: Int, encodedWord: String, wordList: List[String]): List[String] =
 
-    // val boot = in.split("^\\d+!")
-    val boot = in.split('!')(0)
-    val firstStr = in
-      .drop(boot.length + 1)
-      .slice(0, boot.toInt)
-    println(s"Boot: $firstStr")
-//    @tailrec
-//    def recurse(state: State, encodedWord: String, currentIndex: Int) = state match {
-//      case State.DELIMITER => println("delims")
-//      case State.WORD      =>
-//
-//    }
+      if encodedWord.isEmpty then return wordList
+      val newEncodedWord = encodedWord.drop(wordLength)
+//      println(s"$encodedWord -> $newEncodedWord")
+      val newWordLength = extractLength(newEncodedWord)
+      recurse(
+        newWordLength._1,
+        newEncodedWord.drop(newWordLength._2 + 1),
+        wordList :+ encodedWord.take(wordLength)
+      )
 
-    val decoded       = mutable.Seq[String]()
-    var currentString = ""
-    for (x <- in) {}
+    if in.length <= 0 then Seq()
+    else
+      val wordLength = extractLength(in)
+      recurse(wordLength._1, in.drop(wordLength._2 + 1), List())
 
-    decoded.toSeq
 }

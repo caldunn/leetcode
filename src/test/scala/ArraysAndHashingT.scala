@@ -84,18 +84,28 @@ class ArraysAndHashingT extends BaseFlatSpec {
   }
 
   "659 - Encode and Decode Strings" should "encode -> decode a string with only alpha-numerics" in {
-    val input   = Seq("lint", "code", "love", "you")
-    val eResult = Seq("lint", "code", "love", "you") // "4!lint4!code4!love3!you"
+    val input   = Seq("lint", "code", "love", "you") // "4!lint4!code4!love3!you"
     val rResult = EncodeAndDecodeStrings.decode(EncodeAndDecodeStrings.encode(input))
 
-    assertResult(eResult)(rResult)
+    assertResult(input)(rResult)
   }
 
   it should "encode -> decode a string that contains more than 10 letters in a single word" in {
     val input   = Seq("lint", "codingwiththebois", "love", "you")
-    val eResult = Seq("lint", "codingwiththebois", "love", "you") // "4!lint4!code4!love3!you"
     val rResult = EncodeAndDecodeStrings.decode(EncodeAndDecodeStrings.encode(input))
 
-    assertResult(eResult)(rResult)
+    assertResult(input)(rResult)
+  }
+  it should "encode -> decode a string that contains a double digit length first word." in {
+    val input   = Seq("codingwiththebois", "codingwiththebois2", "love", "you") // "4!lint4!code4!love3!you"
+    val rResult = EncodeAndDecodeStrings.decode(EncodeAndDecodeStrings.encode(input))
+    assertResult(input)(rResult)
+  }
+
+  "36 - Partially valid sudoku validation" should "encode -> decode a string with only alpha-numerics" in {
+    val input   = Seq("lint", "code", "love", "you") // "4!lint4!code4!love3!you"
+    val rResult = EncodeAndDecodeStrings.decode(EncodeAndDecodeStrings.encode(input))
+
+    assertResult(input)(rResult)
   }
 }
