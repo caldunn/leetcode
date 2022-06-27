@@ -50,4 +50,26 @@ class StackBased extends BaseFlatSpec {
 
     assertResult((-3, -3, 0, -2))((firstMin, firstPop, firstTop, secondMin))
   }
+
+  "155 - Well formed" should "just werkz" in {
+    println("-" * 25)
+    println(Stack.WellFormedParens.generateWellFormedParens(2))
+    println("-" * 25)
+  }
+
+  "739 - Daily Temps - Just leetcode samples" should "Example 1" in {
+    val res  = Stack.DailyTemps.getDailyTemps(Array(73, 74, 75, 71, 69, 72, 76, 73))
+    val real = Array(1, 1, 4, 2, 1, 1, 0, 0)
+
+    assertResult(real)(res)
+
+  }
+
+  it should "Example 2" in {
+    val res  = Stack.DailyTemps.getDailyTemps(Array(73, 74, 75, 71, 69, 72, 76, 73))
+    val real = Array(1, 1, 4, 2, 1, 1, 0, 0)
+
+    assertResult(real)(res)
+  }
+
 }
