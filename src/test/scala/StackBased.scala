@@ -23,4 +23,31 @@ class StackBased extends BaseFlatSpec {
     assertResult(false)(res)
   }
 
+  "155 - Min Stack" should "Be stacklike (push & pop)" in {
+    val stack = MinStack[Int]()
+    stack.push(1)
+    stack.push(2)
+    val a = stack.pop
+    val b = stack.pop
+    assertResult((2, 1))((a, b))
+  }
+  it should "expect a thrown NoSuchElementException on popping/topping/getminning of empty stack" in {
+    val stack = MinStack[Int]()
+    assertThrows[NoSuchElementException](stack.pop)
+    assertThrows[NoSuchElementException](stack.top)
+    assertThrows[NoSuchElementException](stack.getMin)
+  }
+  it should "pass leetcodes example" in {
+    val stack = MinStack[Int]()
+
+    stack.push(-2)
+    stack.push(0)
+    stack.push(-3)
+    val firstMin  = stack.getMin
+    val firstPop  = stack.pop
+    val firstTop  = stack.top
+    val secondMin = stack.getMin
+
+    assertResult((-3, -3, 0, -2))((firstMin, firstPop, firstTop, secondMin))
+  }
 }
