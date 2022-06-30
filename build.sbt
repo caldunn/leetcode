@@ -6,7 +6,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "leetcode",
     libraryDependencies := Seq(
-      "org.scalactic" %% "scalactic" % "3.2.11",
-      "org.scalatest" %% "scalatest" % "3.2.11" % "test"
+      "org.scalactic" %% "scalactic" % "3.2.12",
+      "org.scalatest" %% "scalatest" % "3.2.12" % "test"
     )
   )

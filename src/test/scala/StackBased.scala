@@ -43,18 +43,16 @@ class StackBased extends BaseFlatSpec {
     stack.push(-2)
     stack.push(0)
     stack.push(-3)
-    val firstMin = stack.getMin
-    val firstPop = stack.pop
-    val firstTop = stack.top
+    val firstMin  = stack.getMin
+    val firstPop  = stack.pop
+    val firstTop  = stack.top
     val secondMin = stack.getMin
 
     assertResult((-3, -3, 0, -2))((firstMin, firstPop, firstTop, secondMin))
   }
 
   "155 - Well formed" should "just werkz" in {
-    println("-" * 25)
-    println(Stack.WellFormedParens.generateWellFormedParens(2))
-    println("-" * 25)
+    Stack.WellFormedParens.generateWellFormedParens(2)
   }
 
   "739 - Daily Temps - Just leetcode samples" should "Example 1" in {
@@ -75,14 +73,79 @@ class StackBased extends BaseFlatSpec {
 
   "854 - Cars - Just leetcode samples" should "Example 1" in {
     val res =
-      Stack.CarFleets.asCarFleets(
-        12,
-        Array(10, 8, 0, 5, 3),
-        Array(2, 4, 1, 1, 3)
-      )
-    val real = Array(1, 1, 4, 2, 1, 1, 0, 0)
+      Stack
+        .CarFleets
+        .asCarFleets(
+          12,
+          Array(10, 8, 0, 5, 3),
+          Array(2, 4, 1, 1, 3)
+        )
+    val real = 3
 
-    //  assertResult(real)(res)
+    assertResult(real)(res)
+  }
+  it should "Example 2" in {
+    val res =
+      Stack
+        .CarFleets
+        .asCarFleets(
+          100,
+          Array(0, 2, 4),
+          Array(4, 2, 1)
+        )
+    val real = 1
+
+    assertResult(real)(res)
   }
 
+  "150 - Evaluate RPN" should "Example 1" in {
+    val res  = EvalRPN.evaluate(Array("2", "1", "+", "3", "*"))
+    val real = 9
+
+    assertResult(real)(res)
+  }
+  it should "Ex 2" in {
+    val res  = EvalRPN.evaluate(Array("4", "13", "5", "/", "+"))
+    val real = 6
+
+    assertResult(real)(res)
+  }
+  it should "Ex 3" in {
+    val res  = EvalRPN.evaluate(Array("10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"))
+    val real = 22
+
+    assertResult(real)(res)
+  }
+
+  "84 - Histogram rectangles" should "Rectangle at end" in {
+    val res  = LargestRectangleInHistogram.calcRectangle(Array(2, 1, 3, 7, 7, 7))
+    val real = 21
+
+    assertResult(real)(res)
+  }
+  it should "middle" in {
+    val res  = LargestRectangleInHistogram.calcRectangle(Array(2, 1, 5, 6, 2, 3))
+    val real = 10
+
+    assertResult(real)(res)
+  }
+  it should "Single column" in {
+    val res  = LargestRectangleInHistogram.calcRectangle(Array(1, 4, 1))
+    val real = 4
+
+    assertResult(real)(res)
+  }
+  it should "Start" in {
+    val res  = LargestRectangleInHistogram.calcRectangle(Array(6, 6, 2, 2, 2, 3))
+    val real = 12
+
+    assertResult(real)(res)
+  }
+  it should "Across bottom" in {
+    val iArray = Array(1, 1, 2, 2, 1, 1, 6, 1)
+    val res    = LargestRectangleInHistogram.calcRectangle(iArray)
+    val real   = iArray.length
+
+    assertResult(real)(res)
+  }
 }
